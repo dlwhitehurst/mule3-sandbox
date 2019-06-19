@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+
+<flow name="get-person" processingStrategy="synchronous">
+        <set-variable variableName="userId" value="#[message.inboundProperties.'http.query.params'.userId]" doc:name="Set Query Param" />
+        <db:select config-ref="MySQL_Configuration" streaming="true" doc:name="Database">
+            <db:parameterized-query><![CDATA[SELECT `id`,`firstName`,`lastName`,`userId`,`encSsn` FROM person where userId = #[flowVars.userId]]]></db:parameterized-query>
+        </db:select>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:input-payload />
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+	persons: payload map ((results) -> {
+	firstName: results.firstName,
+	lastName: results.lastName,
+	userId: results.userId,
+	encSsn: results.encSsn
+	})
+}
+]]></dw:set-payload>
+        </dw:transform-message>
+</flow>
+
+<flow name="get-extensions" processingStrategy="synchronous">
+        <db:select config-ref="MySQL_Configuration" streaming="true" doc:name="Database">
+            <db:parameterized-query><![CDATA[SELECT `id`,`transactionId`,`firstName`,`lastName`,`userId`,`encSsn`,`createDate` FROM extension]]></db:parameterized-query>
+        </db:select>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:input-payload />
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+extensions: payload map ((results) -> {
+	id: results.id,
+	transactionId: results.transactionId,
+	firstName: results.firstName,
+	lastName: results.lastName,
+	userId: results.userId,
+	encSsn: results.encSsn,
+	createDate: results.createDate as :localdatetime {format: "yyyy-MM-dd'T'HH:mm:ss.SSS+0000"} 
+           as :string {format: "yyyy-MM-dd HH:mm:ss"}
+})]]></dw:set-payload>
+        </dw:transform-message>
+
+</flow>
+
+<flow name="post-extension" processingStrategy="synchronous">
+        <dw:transform-message doc:name="Transform Message">
+            <dw:input-payload mimeType="application/json" />
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+  transactionId: payload.transactionId,
+  firstName: payload.firstName,
+  lastName: payload.lastName,
+  encSsn: payload.encSsn,
+  userId: payload.userId,
+  createDate: payload.createDate
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <logger level="INFO" doc:name="Logger" />
+        <db:insert config-ref="MySQL_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[INSERT INTO dummy.extension (userId, transactionId, firstName, lastName, encSsn, createDate) VALUES (#[dw('payload.userId')], #[dw('payload.transactionId')], #[dw('payload.firstName')], #[dw('payload.lastName')], #[dw('payload.encSsn')], #[dw('payload.createDate')])]]></db:parameterized-query>
+        </db:insert>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload resource="classpath:dataweave/http-status-201-message.dwl" />
+            <dw:set-property propertyName="http.status" resource="classpath:dataweave/http-status-201.dwl" />
+        </dw:transform-message>
+
+</flow>
+
+</mule>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:api-platform-gw="http://www.mulesoft.org/schema/mule/api-platform-gw"
+	xmlns:secure-property-placeholder="http://www.mulesoft.org/schema/mule/secure-property-placeholder" xmlns:apikit="http://www.mulesoft.org/schema/mule/apikit"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd
+http://www.mulesoft.org/schema/mule/api-platform-gw http://www.mulesoft.org/schema/mule/api-platform-gw/current/mule-api-platform-gw.xsd
+http://www.mulesoft.org/schema/mule/apikit http://www.mulesoft.org/schema/mule/apikit/current/mule-apikit.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/secure-property-placeholder http://www.mulesoft.org/schema/mule/secure-property-placeholder/current/mule-secure-property-placeholder.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+	<spring:beans>
+	  <spring:import resource="classpath:commons-success-async.xml" />
+	  <spring:import resource="classpath:commons-error-async.xml" />
+	  <spring:import resource="classpath:commons-error.xml" />
+	  <spring:import resource="classpath:commons-global.xml" />
+	</spring:beans>
+    <!-- secure-property-placeholder:config name="Secure_Property_Placeholder" key="${key}" location="classpath:tax-extension-xapi-${env}.properties,classpath:integration-commons-${env}.properties" doc:name="Secure Property Placeholder"/-->
+	<context:property-placeholder location="tax-extension-xapi-${env}.properties" />
+    <api-platform-gw:api apiName="${api.discovery.apiname}" version="${api.discovery.version}" flowRef="tax-extension-xapi-v1-api-main" create="true" doc:name="API Autodiscovery">
+        <api-platform-gw:description>Discover this API on Anypoint Platform and my Organization.</api-platform-gw:description>
+    </api-platform-gw:api>
+    <apikit:config name="tax-extension-xapi-v1-api-config" raml="tax-extension-xapi-v1.raml" consoleEnabled="false" doc:name="Router" keepRamlBaseUri="false"/>
+    <http:request-config name="tax-extension-papi-request" host="${process.hostname}" port="${process.port}" basePath="${process.base.path}" protocol="${process.protocol}" doc:name="HTTPS Request Configuration">
+    </http:request-config>
+</mule>

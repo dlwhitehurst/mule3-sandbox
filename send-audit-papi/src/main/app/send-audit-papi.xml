@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:objectstore="http://www.mulesoft.org/schema/mule/objectstore"
+	xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:json="http://www.mulesoft.org/schema/mule/json"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/objectstore http://www.mulesoft.org/schema/mule/objectstore/current/mule-objectstore.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <flow name="send-audit-error">
+        <jms:inbound-endpoint queue="commons.error.audit" connector-ref="Active_MQ" doc:name="JMS"/>
+        <jms:jmsmessage-to-object-transformer doc:name="JMSMessage to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <objectstore:retrieve config-ref="object-store" key="#[json:transactionId]" defaultValue-ref="#[0]" targetProperty="count" doc:name="Retrieve Count"/>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars.count &lt;= 5]">
+                <jms:outbound-endpoint queue="send.audit.error" connector-ref="Active_MQ" doc:name="Insert Into Audit Error DB"/>
+            </when>
+            <otherwise>
+                <logger message="MAX RETRIES EXCEEDED" level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>
+        <objectstore:store config-ref="object-store" key="#[json:transactionId]" value-ref="#[flowVars.count + 1]" overwrite="true" doc:name="Update Count"/>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars.count == 5]">
+                <jms:outbound-endpoint queue="DLQ" connector-ref="Active_MQ" doc:name="DLQ"/>
+            </when>
+            <otherwise>
+                <logger message="PROCESS IS FINISHED" level="INFO" doc:name="Logger"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <flow name="insert-audit-error">
+        <jms:inbound-endpoint queue="send.audit.error" connector-ref="Active_MQ" doc:name="JMS"/>
+        <jms:jmsmessage-to-object-transformer doc:name="JMSMessage to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <db:insert config-ref="MySQL_Configuration" doc:name="Audit Error Database">
+            <db:parameterized-query><![CDATA[INSERT INTO dummy.audit_error (transactionId, applicationName,flowName,statusCode,createDate,exceptionCause) VALUES (#[dw('payload.transactionId')],#[dw('payload.applicationName')],#[dw('payload.flowName')],#[dw('payload.statusCode')],#[dw('payload.createDate')],#[dw('payload.exceptionCause')])]]></db:parameterized-query>
+        </db:insert>
+        <logger message="#['Request failed.  Please look at the audit database for additional information']" level="INFO" category="com.gaf.integration.integration_commons" doc:name="Logger"/>
+        <catch-exception-strategy doc:name="retry-fault-handler">
+        	<set-payload value="#[payload]" doc:name="Set Payload"/>
+            <jms:outbound-endpoint queue="commons.error.audit" connector-ref="Active_MQ" doc:name="Retry fault handler"/>
+        </catch-exception-strategy>
+    </flow>
+    <flow name="send-audit-success">
+        <jms:inbound-endpoint queue="commons.success.audit" connector-ref="Active_MQ" doc:name="JMS"/>
+        <jms:jmsmessage-to-object-transformer doc:name="JMSMessage to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <db:insert config-ref="MySQL_Configuration" doc:name="Audit Success Database">
+            <db:parameterized-query><![CDATA[INSERT INTO dummy.audit_success (transactionId, applicationName,statusCode,createDate) VALUES (#[dw('payload.transactionId')],#[dw('payload.applicationName')],#[dw('payload.statusCode')],#[dw('payload.createDate')])]]></db:parameterized-query>
+        </db:insert>
+        <logger message="#['Request Accepted.  Please look at the audit database for additional information']" level="INFO" doc:name="Logger"/>
+        <catch-exception-strategy  doc:name="Database Error">
+            <set-property propertyName="http.status" value="500" doc:name="Set HTTP Status"/>
+            <flow-ref name="commons-error-prepare-JMS" doc:name="commons-error-prepare-JMS"/>
+        </catch-exception-strategy>
+    </flow>
+
+</mule>

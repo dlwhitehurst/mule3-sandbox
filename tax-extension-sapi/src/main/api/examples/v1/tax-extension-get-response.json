@@ -1,0 +1,18 @@
+[
+	{
+  		"transactionId": "abc12345",
+  		"firstName": "David",
+  		"lastName": "Whitehurst",
+  		"encSsn": "x8JBPDdUHi7e",
+  		"userId": "dlwhitehurst",
+  		"createDate": "5-1-2019"
+	},
+	{
+  		"transactionId": "def9876",
+  		"firstName": "Huy",
+  		"lastName": "Ngo",
+  		"encSsn": "y4AfPD078dUHi7e",
+  		"userId": "hngo",
+  		"createDate": "7-4-2019"
+	}
+]

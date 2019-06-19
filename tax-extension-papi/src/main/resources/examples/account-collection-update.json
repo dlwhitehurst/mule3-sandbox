@@ -1,0 +1,42 @@
+{  
+   "UpdateCollectionProcess":{  
+      "collectionProcessId":"3489791400",
+      "templateCode":"STND",
+      "collectionClassControl":"CAL STANDARD WATER",
+      "accountId":"3488324358",
+      "entityName":"Martinez,Test, Residential, $45.78,",
+      "currency":"USD",
+      "statusFlag":"10",
+      "statusReasonFlag":"10",
+      "collectionConditionPriority":"90",
+      "priority":"90",
+      "createDttm":"2016-02-23-22.20.12",
+      "arrearsDate":"2016-01-29",
+      "arrearsAmt":"44.29",
+      "daysInArrears":"0",
+      "debtClassCd":"WATR",
+      "collectionSaList":{  
+         "serviceAgreementId":"3488324129",
+         "collectionSaStatus":"10",
+         "arrearsAmt":"44.29",
+         "currentBal":"44.29",
+         "totalBal":"44.29",
+         "amtStillOwing":"44.29",
+         "creditAmt":"0.00",
+         "collectionSaArrearsList":[  
+            {  
+               "daysAge":"28",
+               "arrearsAmt":"35.62"
+            }
+         ]
+      },
+      "collectionEventList":[  
+         {  
+            "eventSeq":"10",
+            "eventStatusFlag":"10",
+            "eventTypeCd":"PHONECALL1",
+            "triggerDate":"2016-03-15"
+         }
+      ]
+   }
+}

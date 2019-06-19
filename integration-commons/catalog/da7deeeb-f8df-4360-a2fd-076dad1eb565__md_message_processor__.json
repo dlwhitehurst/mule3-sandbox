@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "ImmutableBatchJobResult"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "email"
+        }
+    },
+    "id": "da7deeeb-f8df-4360-a2fd-076dad1eb565",
+    "version": "5.2.0.0"
+}

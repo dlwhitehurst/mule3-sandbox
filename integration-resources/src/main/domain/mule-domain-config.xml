@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain:mule-domain
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:domain="http://www.mulesoft.org/schema/mule/ee/domain"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:spring="http://www.springframework.org/schema/beans"
+        xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+		xmlns:db="http://www.mulesoft.org/schema/mule/db" 
+		xmlns:http="http://www.mulesoft.org/schema/mule/http" 
+		xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+		xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+        xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
+
+    <!-- configure here resource to be shared within the domain -->
+	<spring:beans>
+        <spring:bean id="mysqlDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+            <spring:property name="driverClassName" value="${jdbc.driver}" />
+            <spring:property name="url" value="${jdbc.url}" />
+            <spring:property name="username" value="${jdbc.username}" />
+            <spring:property name="password" value="${jdbc.password}" />
+            <spring:property name="initialSize" value="${jdbc.pool.initial.size}" />
+            <spring:property name="maxTotal" value="${jdbc.pool.max.total}"/>
+            <spring:property name="maxIdle" value="${jdbc.pool.max.idle}" />
+            <spring:property name="minIdle" value="${jdbc.pool.min.iddle}" />
+            <spring:property name="maxWaitMillis" value="${jdbc.pool.max.wait.millis}" />
+            <spring:property name="defaultQueryTimeout" value="${jdbc.pool.default.query.timeout.millis}" />
+            <spring:property name="validationQuery" value="${jdbc.pool.validation.query}" />
+            <spring:property name="validationQueryTimeout" value="${jdbc.pool.validation.query.timeout.seconds}" />
+            <spring:property name="testWhileIdle" value="${jdbc.pool.test.while.idle}" />
+            <spring:property name="timeBetweenEvictionRunsMillis" value="${jdbc.pool.time.between.eviction.runs.millis}"/>
+            <spring:property name="minEvictableIdleTimeMillis" value="${jdbc.pool.min.evictable.idle.time.millis}" />
+            <spring:property name="removeAbandonedOnMaintenance" value="${jdbc.pool.remove.abandoned.on.maintenance}"/>
+            <spring:property name="removeAbandonedTimeout" value="${jdbc.pool.remove.abandoned.timeout.seconds}" />
+            <spring:property name="logAbandoned" value="${jdbc.pool.log.abandoned}" />
+        </spring:bean>
+<!-- 
+	    <spring:bean class="org.mule.modules.security.placeholder.SecurePropertyPlaceholderModule">
+	        <spring:property name="encryptionMode" value="CBC" />
+	        <spring:property name="encryptionAlgorithm" value="AES" />
+	        <spring:property name="location" value="integration-resources-${env}.properties" />
+	        <spring:property name="ignoreUnresolvablePlaceholders" value="true" />
+	        <spring:property name="key" value="${key}" />
+	    </spring:bean>
+ --> 
+ 		<spring:bean name="connectionFactory" class="org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory">
+            <spring:constructor-arg index="0" value="${activemq.artemis.uri}"/>
+            <spring:constructor-arg index="1" value="${activemq.artemis.username}"/>
+            <spring:constructor-arg index="2" value="${activemq.artemis.password}"/>
+        </spring:bean>       
+    </spring:beans>
+    
+    <context:property-placeholder location="integration-resources-${env}.properties" />
+    
+    <db:generic-config name="MySQL_Configuration" dataSource-ref="mysqlDataSource" doc:name="SQL Server Configuration"/>
+	<jms:connector name="Active_MQ" specification="1.1" connectionFactory-ref="connectionFactory" doc:name="JMS" validateConnections="true"/>    
+    <http:listener-config name="https-internal" host="0.0.0.0" port="${http.internal.port}" doc:name="HTTPS Internal Listener Configuration"   />
+    <http:listener-config name="https-external" host="0.0.0.0" port="${http.external.port}" doc:name="HTTPS External Listener Configuration"   />
+    
+</domain:mule-domain>

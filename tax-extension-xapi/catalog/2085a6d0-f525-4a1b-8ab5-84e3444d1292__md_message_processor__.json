@@ -1,0 +1,22 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "string"
+        },
+        "flowVariables": {
+            "personId": {
+                "connectorName": "#_custom_mule_metadata_type_#",
+                "typeId": "string"
+            }
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "service-contact"
+        }
+    },
+    "id": "2085a6d0-f525-4a1b-8ab5-84e3444d1292",
+    "version": "5.2.0.0"
+}

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.gaf.integration</groupId>
+    <artifactId>integration-parent</artifactId>
+    <version>3.8.5</version>
+    <packaging>pom</packaging>
+    <name>Mule Integration-Parent Application</name>
+	<description>This POM Project provides parent dependencies for MuleSoft applications</description>
+	<inceptionYear>2019</inceptionYear>
+	
+	<modules>
+          <module>../integration-resources</module>
+          <module>../integration-commons</module>
+          <module>../tax-extension-sapi</module>
+          <module>../tax-extension-xapi</module>
+          <module>../tax-extension-papi</module>
+          <module>../send-audit-papi</module>
+    </modules>
+    	
+	<organization>
+		<name>General Aniline and Film (GAF)</name>
+		<url>https://www.gaf.com/</url>
+	</organization>
+	<developers>
+		<developer>
+			<name>David L. Whitehurst</name>
+			<email>dwhitehurst@ms3-inc.com</email>
+			<organization>Mountain State Software Solutions</organization>
+			<organizationUrl>https://www.ms3-inc.com/</organizationUrl>
+			<roles>
+				<role>Architect</role>
+			</roles>
+			<timezone>America/New_York</timezone>
+		</developer>
+	</developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <mule.version>3.8.5</mule.version>
+        <mule.tools.version>1.2</mule.tools.version>
+        <integration.commons.version>1.0.0</integration.commons.version>
+        <munit.version>1.3.4</munit.version>
+        <mule.munit.support.version>3.8.3</mule.munit.support.version>
+        <security.version>1.6.0</security.version>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+	<!-- Deployment Profiles -->
+    <profiles>
+        <profile>
+            <id>mule-local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+            	<skip.deploy.artifact>true</skip.deploy.artifact>
+            </properties>
+        </profile>
+        <profile>
+            <id>mule-development</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+            	<skip.deploy.artifact>true</skip.deploy.artifact>
+                <mule.cluster.name>Development</mule.cluster.name>
+                <mule.environment>Development</mule.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>mule-test</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+            	<skip.deploy.artifact>true</skip.deploy.artifact>
+                <mule.cluster.name>Test</mule.cluster.name>
+                <mule.environment>Test</mule.environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>mule-production</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+            	<skip.deploy.artifact>false</skip.deploy.artifact>
+                <mule.cluster.name>Production</mule.cluster.name>
+                <mule.environment>Production</mule.environment>
+            </properties>
+        </profile>
+    </profiles>
+
+	<!-- Mule Dependencies -->
+    <dependencies>
+		<!-- Xml configuration -->
+        <dependency>
+            <groupId>com.mulesoft.muleesb</groupId>
+            <artifactId>mule-core-ee</artifactId>
+            <version>${mule.version}</version>
+			<scope>provided</scope>
+        </dependency>
+		<!-- Xml configuration -->
+        <dependency>
+			<groupId>com.mulesoft.muleesb.modules</groupId>
+			<artifactId>mule-module-spring-config-ee</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Mule Transports -->
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-file</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-http</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+        	<groupId>com.mulesoft.muleesb.transports</groupId>
+			<artifactId>mule-transport-jdbc-ee</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+        	<groupId>com.mulesoft.muleesb.transports</groupId>
+			<artifactId>mule-transport-jms-ee</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-vm</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Mule Modules -->
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-scripting</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-xml</artifactId>
+			<version>${mule.version}</version>
+			<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>com.mulesoft.security</groupId>
+            <artifactId>mule-module-security-property-placeholder</artifactId>
+            <version>${security.version}</version>
+        </dependency>
+		<!-- integration commons -->
+		<dependency>
+			<groupId>com.gaf.integration</groupId>
+			<artifactId>integration-commons</artifactId>
+			<version>${integration.commons.version}</version>
+			<scope>compile</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.mule.modules</groupId>
+            <artifactId>mule-module-apikit</artifactId>
+            <version>${mule.version}</version>
+            <scope>provided</scope>
+        </dependency>
+		<!-- for testing -->
+		<dependency>
+			<groupId>org.mule.tests</groupId>
+			<artifactId>mule-tests-functional</artifactId>
+			<version>${mule.version}</version>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>mule-munit-support</artifactId>
+            <version>${mule.munit.support.version}</version>
+            <scope>test</scope>
+        </dependency>
+	    <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-runner</artifactId>
+            <version>${munit.version}</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+
+	<repositories>
+          <repository>
+            <id>Central</id>
+            <name>Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mulesoft-release</id>
+            <name>mulesoft release repository</name>
+            <layout>default</layout>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+	<!--  Recommend Nexus for Release artifact repository at a minimum -->
+    <distributionManagement>
+        <snapshotRepository>
+           <id>nexus</id>
+           <name>Maven Snapshots</name>
+           <url></url>
+        </snapshotRepository>
+        <repository>
+           <id>nexus</id>
+           <name>Maven Releases</name>
+           <url></url>
+        </repository>
+    </distributionManagement>
+</project>

@@ -1,0 +1,29 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "Object"
+        },
+        "flowVariables": {
+            "processname": {
+                "connectorName": "#_custom_mule_metadata_type_#",
+                "typeId": "string"
+            },
+            "stackTrace": {
+                "connectorName": "#_custom_mule_metadata_type_#",
+                "typeId": "string"
+            }
+        },
+        "sessionVariables": {
+            "apilayer": {}
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "email"
+        }
+    },
+    "id": "fb547236-210d-436c-9f67-789f8ea71855",
+    "version": "5.2.0.0"
+}

@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "payment-extension-request"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "payment-extension-request-jms-model"
+        }
+    },
+    "id": "a7a42b2c-9dd0-4f5a-a8a3-dc7dab547561",
+    "version": "5.2.0.0"
+}

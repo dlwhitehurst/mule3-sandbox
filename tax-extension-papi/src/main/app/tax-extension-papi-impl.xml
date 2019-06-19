@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <flow name="tax-extension-papi-impl" processingStrategy="synchronous">
+        <dw:transform-message doc:name="Variables">
+            <dw:set-variable variableName="transactionId"><![CDATA[%dw 1.0
+%output application/java
+---
+payload.transactionId]]></dw:set-variable>
+            <dw:set-variable variableName="createDate"><![CDATA[%dw 1.0
+%output application/java
+---
+payload.createDate]]></dw:set-variable>
+            <dw:set-variable variableName="encSsn"><![CDATA[%dw 1.0
+%output application/java
+---
+payload.encSsn]]></dw:set-variable>
+            <dw:set-variable variableName="userId"><![CDATA[%dw 1.0
+%output application/java
+---
+payload.userId]]></dw:set-variable>
+        </dw:transform-message>
+<!--         <set-variable variableName="transactionId" value="#[dw('payload.transactionId')]" doc:name="Set transactionId"/>
+        <set-variable variableName="createDate" value="#[dw('payload.createDate')]" doc:name="Set createDate"/>
+
+        <set-variable variableName="userId" value="#[dw('payload.userId')]" doc:name="Set userId"/>
+        <set-variable variableName="encSsn" value="#[dw('payload.encSsn')]" doc:name="Set encSsn"/> -->
+        <http:request config-ref="tax-extension-sapi-request" path="tax/persons" method="GET" doc:name="get-user-info">
+            <http:request-builder>
+                <http:query-param paramName="userId" value="#[flowVars.userId]"/>
+
+            </http:request-builder>
+        </http:request>
+        <logger message="ASFDGUDOFJIHLOJJDEDRYHUJIKOL" level="INFO" doc:name="Logger"/>
+        <byte-array-to-object-transformer doc:name="Byte Array to Object"/>
+        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <validation:is-true expression="#[flowVars.encSsn == dw('payload.persons[0].encSsn')]" doc:name="Validation" message="User with provided encrypted SSN does not match records in database."/>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+  "transactionId": flowVars.transactionId,
+  "firstName": payload.persons[0].firstName,
+  "lastName": payload.persons[0].lastName,
+  "encSsn": payload.persons[0].encSsn,
+  "userId": payload.persons[0].userId,
+  "createDate" : flowVars.createDate
+}
+]]></dw:set-payload>
+        </dw:transform-message>
+        <http:request config-ref="tax-extension-sapi-request" path="tax/extensions" method="POST" doc:name="request-tax-extension">
+            <http:request-builder>
+                <http:header headerName="Content-Type" value="application/json"/>
+            </http:request-builder>
+        </http:request>
+        <dw:transform-message doc:name="Transform Message">
+            <dw:set-payload resource="classpath:dataweave/http-status-201-message.dwl"/>
+            <dw:set-property resource="classpath:dataweave/http-status-201.dwl" propertyName="http.status"/>
+        </dw:transform-message>
+        <set-variable variableName="httpStatus" value="201" doc:name="HTTP Status"/>
+        <flow-ref name="commons-success-prepare-JMS" doc:name="commons-success-prepare-JMS"/>
+        <choice-exception-strategy doc:name="Choice Exception Strategy">
+            <catch-exception-strategy doc:name="Database Error" when="#[message.inboundProperties.'http.status' == 500]">
+                <set-property propertyName="http.status" value="500" doc:name="Set HTTP Status"/>
+                <flow-ref name="commons-error-prepare-JMS" doc:name="commons-error-prepare-JMS"/>
+            </catch-exception-strategy>
+            <catch-exception-strategy doc:name="Incorrect User Credentials">
+                <set-property propertyName="http.status" value="404" doc:name="Set HTTP Status"/>
+                <flow-ref name="commons-error-prepare-JMS" doc:name="commons-error-prepare-JMS"/>
+            </catch-exception-strategy>
+        </choice-exception-strategy>
+
+    </flow>
+
+
+</mule>

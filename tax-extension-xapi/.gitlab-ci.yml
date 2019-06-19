@@ -1,0 +1,88 @@
+stages:
+  - compile
+  - test
+  - package
+  - install
+  - deploy
+
+maven-compile:
+  stage: compile
+  tags: [mule]
+  only:
+    - master
+    - develop
+  script:
+    - mvn clean compile
+
+maven-test:
+  stage: test
+  tags: [mule]
+  only:
+    - master
+    - develop
+  script:
+    - mvn clean test
+
+maven-package:
+  stage: package
+  tags: [mule]
+  only:
+    - master
+    - develop
+  script:
+    - mvn mule-app:mule
+  artifacts: 
+    paths: 
+      - target/*.zip
+
+maven-install:
+  stage: install
+  tags: [mule]
+  only:
+    - master
+    - develop
+  script:
+    - mvn mule-app:mule install:install
+    - mvn mule-app:install
+
+deploy-dev:
+  stage: deploy
+  tags: [mule]
+  only:
+    - develop
+  script:
+    - mvn clean deploy -DskipTests -Pmule-development
+  environment:
+    name: development
+
+deploy-tst-1:
+  stage: deploy
+  tags: [mule]
+  only:
+    - develop
+  script:
+    - mvn clean deploy -DskipTests -Pmule-test
+  environment:
+    name: test
+  when: manual
+
+deploy-tst-2:
+  stage: deploy
+  tags: [mule]
+  only:
+    - master
+  script:
+    - mvn clean deploy -DskipTests -Pmule-test
+  environment:
+    name: test
+
+deploy-prd:
+  stage: deploy
+  tags: [mule]
+  only:
+    - master
+  script:
+    - mvn clean mule:deploy -DskipTests -Pmule-production -B release:clean release:prepare release:perform
+  environment:
+    name: production
+  when: manual

@@ -1,0 +1,54 @@
+{
+    "CM-ReadCollectionProcess": {
+        "@xmlns:soap": "http://schemas.xmlsoap.org/soap/envelope/",
+        "@xmlns:xmlns": "http://oracle.com/CM-ReadCollectionProcess.xsd",
+        "collectionProcessId": "3617443903",
+        "templateCode": "STND SUB",
+        "collectionClassControl": "HI STANDARD WATER",
+        "accountId": "3615416093",
+        "entityName": "Romer,Randy, Residential Class with Late Payment, $171.99,",
+        "currency": "USD",
+        "statusFlag": "10",
+        "statusReasonFlag": "10",
+        "collectionConditionPriority": "90",
+        "priority": "90",
+        "createDttm": "2017-05-18-22.19.49",
+        "arrearsDate": "2017-04-23",
+        "arrearsAmt": "76.42",
+        "daysInArrears": "0",
+        "debtClassCd": "WATR",
+        "collectionSaList": {
+            "serviceAgreementId": "3615416938",
+            "collectionSaStatus": "10",
+            "arrearsAmt": "76.42",
+            "currentBal": "171.99",
+            "totalBal": "171.99",
+            "amtStillOwing": "76.42",
+            "creditAmt": "0.00",
+            "collectionSaArrearsList": [
+                {
+                    "daysAge": "106",
+                    "arrearsAmt": "95.57"
+                },
+                {
+                    "daysAge": "134",
+                    "arrearsAmt": "76.42"
+                }
+            ]
+        },
+        "collectionEventList": [
+            {
+                "eventSeq": "10",
+                "eventStatusFlag": "10",
+                "eventTypeCd": "TERM LETTER",
+                "triggerDate": "2017-06-01"
+            },
+            {
+                "eventSeq": "20",
+                "eventStatusFlag": "10",
+                "eventTypeCd": "START SEV",
+                "triggerDate": "2017-06-16"
+            }
+        ]
+    }
+}

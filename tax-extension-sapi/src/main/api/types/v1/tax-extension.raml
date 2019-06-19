@@ -1,0 +1,28 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  transactionId:
+    type: string
+    required: true
+    example: a56fd33-e003-4ac12345de779
+  userId:
+    type: string
+    required: true
+    example: dlwhitehurst
+  firstName:
+    type: string
+    required: true
+    example: David
+  lastName:
+    type: string
+    required: true
+    example: Whitehurst
+  encSsn:
+    description: encrypted SSN of user
+    type: string
+    required: true
+    example: x8JBPDdUHi7e
+  createDate:
+    type: string
+    required: true
+    example: 5-1-2019

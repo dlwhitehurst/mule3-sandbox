@@ -1,0 +1,1332 @@
+<metadata__cache__entry>
+  <version>5.2.0.0</version>
+  <connectorName>MySQL_Configuration</connectorName>
+  <metadataIo class="tree-map">
+    <entry>
+      <string>http://www.mulesoft.org/schema/mule/db/insert</string>
+      <map>
+        <entry>
+          <string>INSERT INTO dummy.audit_success (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (&apos;1234&apos;,(&apos;applicationName&apos;),(&apos;1&apos;),(&apos;9999-11-22 33:44:55&apos;))</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (&apos;1234&apos;,(&apos;applicationName&apos;),(&apos;1&apos;)(&apos;9999-11-22 33:44:55&apos;))</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (#[flowVars.transactionId],#[flowVars.applicationName],#[flowVars.successCode],#[flowVars.successDate])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_success (transactionId, applicationName,statusCode,createDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (&apos;12345&apos;,&apos;asdf&apos;,&apos;1&apos;,())</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[app.name],#[dw(&apos;payload.statusCode&apos;)],#[server.dateTime.format(&apos;yyyy/MM/dd HH:mm:ss&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.message.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.successDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.successDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],(#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.successCode&apos;)],(#[dw(&apos;payload.successDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.message.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[server.dateTime.format(&apos;yyyy/MM/dd HH:mm:ss&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_error (transactionId, applicationName,flowName,statusCode,createDate,exceptionCause) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.flowName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)],#[dw(&apos;payload.exceptionCause&apos;)],#[dw(&apos;payload.stackTrace&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (#[flowVars.transactionId],#[flowVars.applicationName],#[flowVars.statusCode],#[flowVars.successDate])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[flowVars.transactionId],#[flowVars.applicationName],#[flowVars.statusCode],#[flowVars.successDate])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.message.transactionId&apos;)],#[app.name],#[dw(&apos;payload.statusCode&apos;)],#[server.dateTime.format(&apos;yyyy/MM/dd HH:mm:ss&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (##[dw(&apos;payload.message.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.successDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_error (transactionId, applicationName,flowName,statusCode,createDate,exceptionCause,stackTrace) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.flowName&apos;)],#[dw(&apos;payload.statusCode&apos;)],&#xd;
+#[dw(&apos;payload.createDate&apos;)]#[dw(&apos;payload.exceptionCause&apos;)]#[dw(&apos;payload.stackTrace&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[&apos;dw()&apos;],#[flowVars.applicationName],#[flowVars.statusCode],#[flowVars.successDate])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_error (transactionId, applicationName,flowName,statusCode,createDate,exceptionCause,stackTrace) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.flowName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)]#[dw(&apos;payload.exceptionCause&apos;)]#[dw(&apos;payload.stackTrace&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (#[flowVars.transactionId],(#[flowVars.applicationName)],#[flowVars.successCode],(#[flowVars.successDate])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_error (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit_error (transactionId, applicationName,flowName,statusCode,createDate,exceptionCause,stackTrace) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.flowName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)],#[dw(&apos;payload.exceptionCause&apos;)],#[dw(&apos;payload.stackTrace&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,statusCode,successDate) VALUES (#[dw(&apos;payload.transactionId&apos;)],#[dw(&apos;payload.applicationName&apos;)],#[dw(&apos;payload.statusCode&apos;)],#[dw(&apos;payload.createDate&apos;)])</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+        <entry>
+          <string>INSERT INTO dummy.audit (transactionId, applicationName,successCode,successDate) VALUES (&apos;12345&apos;,&apos;asdf&apos;,&apos;1&apos;,&apos;1111:22:33 44:55:66&apos;)</string>
+          <org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+            <output class="org.mule.common.metadata.DefaultMetaData">
+              <payload class="org.mule.common.metadata.DefaultSimpleMetaDataModel">
+                <dataType>DOUBLE</dataType>
+                <metaDataModelPropertiesManager>
+                  <properties/>
+                </metaDataModelPropertiesManager>
+              </payload>
+              <properties class="tree-map">
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>FLOW</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>INBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>OUTBOUND</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>SESSION</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+                <entry>
+                  <org.mule.common.metadata.MetaDataPropertyScope>RECORD</org.mule.common.metadata.MetaDataPropertyScope>
+                  <org.mule.common.metadata.MetaDataProperties>
+                    <fields class="sorted-set">
+                      <comparator class="org.mule.common.metadata.MetaDataProperties$MetaDataFieldComparator"/>
+                    </fields>
+                  </org.mule.common.metadata.MetaDataProperties>
+                </entry>
+              </properties>
+            </output>
+          </org.mule.tooling.metadata.cache.DefaultMetadataCacheEntry>
+        </entry>
+      </map>
+    </entry>
+  </metadataIo>
+</metadata__cache__entry>

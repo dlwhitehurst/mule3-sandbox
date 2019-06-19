@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:objectstore="http://www.mulesoft.org/schema/mule/objectstore"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/objectstore http://www.mulesoft.org/schema/mule/objectstore/current/mule-objectstore.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<spring:beans>
+	  <spring:import resource="classpath:commons-error-async.xml" />
+	</spring:beans>
+    <objectstore:config name="object-store" partition="faultHandlerErrorCount" entryTtl="259200000" expirationInterval="3000" maxEntries="1000000" persistent="true" doc:name="ObjectStore: Connector"/>
+
+</mule>

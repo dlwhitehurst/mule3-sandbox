@@ -1,0 +1,20 @@
+{
+	"auditLogId": "bc9a9266-840b-11e7-b527-e8b1fcf1abb7",
+	"applicationName": "sys-prc-shingle-ct-taxing",
+	"flowName": "taxing-assessment",
+	"headerExtension1" : "Ok",
+	"headerExtension2" : null,
+	"headerExtension3" : null,
+	"headerExtension4" : null,
+	"headerExtension5" : null,
+	"faultName":  "com.gaf.integration.IntegrationException",
+	"errorText": "[Stack Trace]",
+	"errorSeverity": "ERROR",
+	"errorDateTime": "1950-01-01 00:00:00",
+	"errorExtension1": "Low Threshhold Error",
+	"errorExtension2": null,
+	"errorExtension3": null,
+	"errorExtension4": null,
+	"errorExtension5": null,
+	"payload": "payload"
+}
